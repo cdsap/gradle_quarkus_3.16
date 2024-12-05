@@ -1,0 +1,9 @@
+dependencies {
+    api project(':root1')
+
+    api "io.quarkus:quarkus-liquibase"
+}
+
+quarkusDev {
+    jvmArgs = ["-Dquarkus.liquibase.contexts=test", "-Dwf.process.new.disabled=false"]
+}

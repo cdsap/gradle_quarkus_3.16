@@ -1,0 +1,16 @@
+dependencies {
+    api project(':root4')
+
+    api 'io.quarkiverse.cxf:quarkus-cxf'
+}
+
+sourceSets.main.java.srcDirs += ['src/main/wsdl2java']
+
+/*
+not required while we switched off code generation by quarkus-cxf
+idea {
+    module {
+        sourceDirs += file('build/classes/java/quarkus-generated-sources/wsdl2java')
+    }
+}
+*/

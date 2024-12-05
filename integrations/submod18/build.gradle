@@ -1,0 +1,13 @@
+dependencies {
+    api project(':root4')
+
+    api "io.quarkus:quarkus-rest-client-jackson"
+    implementation "io.swagger.core.v3:swagger-annotations:${swagger_annotations_version}"
+    implementation "org.openapitools:jackson-databind-nullable:${jackson_databind_nullable_version}"
+}
+
+idea {
+    module {
+        generatedSourceDirs += layout.buildDirectory.dir("generated/publicapi/src/main/java").get().asFile
+    }
+}

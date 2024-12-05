@@ -1,0 +1,68 @@
+plugins {
+    id 'io.quarkus' apply false
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'idea'
+    apply plugin: 'io.quarkus'
+
+    dependencies {
+        implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+        implementation enforcedPlatform("${quarkusPlatformGroupId}:quarkus-cxf-bom:${quarkusPlatformVersion}")
+
+        annotationProcessor "org.projectlombok:lombok:${lombok_version}"
+        compileOnly "org.projectlombok:lombok:${lombok_version}"
+
+        testAnnotationProcessor "org.projectlombok:lombok:${lombok_version}"
+        testCompileOnly "org.projectlombok:lombok:${lombok_version}"
+
+        testImplementation 'io.quarkus:quarkus-junit5'
+        testImplementation 'io.quarkus:quarkus-junit5-mockito'
+        testImplementation 'io.rest-assured:rest-assured'
+        testImplementation "org.mockito:mockito-junit-jupiter"
+        testImplementation "org.hamcrest:hamcrest:${hamcrest_version}"
+        testImplementation "org.awaitility:awaitility:${awaitility_version}"
+    }
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    group 'org.group'
+    if (project.hasProperty('prVersion')) {
+        version = project.prVersion
+    } else {
+        version = '1.0-SNAPSHOT'
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+        dependsOn('compileQuarkusGeneratedSourcesJava')
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    quarkus {
+        buildForkOptions {
+            maxHeapSize = '1g'
+        }
+        codeGenForkOptions {
+            maxHeapSize = '256m'
+        }
+    }
+
+    idea {
+        module {
+            // if you hate browsing Javadoc
+            downloadJavadoc = false
+            // and love reading sources :)
+            downloadSources = true
+        }
+    }
+}

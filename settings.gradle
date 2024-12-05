@@ -1,0 +1,47 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+        id "com.gradle.develocity" version "${gradleDevelocityPluginVersion}"
+    }
+}
+
+if (hasProperty('develocity')) {
+    develocity {
+        buildScan {
+            termsOfUseUrl = "https://gradle.com/terms-of-service"
+            termsOfUseAgree = "yes"
+        }
+    }
+}
+
+include 'root1'
+include 'root2'
+include 'root3'
+include 'root4'
+include 'integrations:submod1'
+include 'integrations:submod2'
+include 'integrations:submod3'
+include 'integrations:submod4'
+include 'integrations:submod5'
+include 'integrations:submod6'
+include 'integrations:submod7'
+include 'integrations:submod8'
+include 'integrations:submod9'
+include 'integrations:submod10'
+include 'integrations:submod11'
+include 'integrations:submod12'
+include 'integrations:submod13'
+include 'integrations:submod14'
+include 'integrations:submod15'
+include 'integrations:submod16'
+include 'integrations:submod17'
+include 'integrations:submod18'
+include 'integrations:submod19'
+include 'integrations:submod20'
+include 'integrations:submod21'
+
+rootProject.name = 'gradle_quarkus'

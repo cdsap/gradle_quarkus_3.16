@@ -1,0 +1,7 @@
+dependencies {
+    api project(':root4')
+
+    api "io.quarkus:quarkus-websockets-client"
+    api "io.quarkus:quarkus-rest-client-jackson"
+    api "io.socket:socket.io-client:${socket_io_client_version}"
+}

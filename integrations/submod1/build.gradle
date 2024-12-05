@@ -1,0 +1,10 @@
+dependencies {
+    api project(':root4')
+    api project(':root3')
+
+    api "io.quarkus:quarkus-rest-client-jackson"
+    api "io.quarkus:quarkus-smallrye-jwt"
+    api "io.quarkus:quarkus-cache"
+    api "io.quarkus:quarkus-scheduler"
+    api "org.apache.commons:commons-csv:${commons_csv_version}"
+}

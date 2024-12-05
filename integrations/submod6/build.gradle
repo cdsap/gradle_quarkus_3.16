@@ -1,0 +1,7 @@
+dependencies {
+    api project(':root4')
+
+    api 'io.quarkus:quarkus-rest-client-jackson'
+    api "io.quarkus:quarkus-smallrye-jwt"
+    api "io.quarkus:quarkus-cache"
+}

@@ -1,0 +1,14 @@
+dependencies {
+    api "commons-codec:commons-codec"
+    api "io.quarkus:quarkus-rest-jackson"
+    api "org.apache.commons:commons-lang3"
+    api 'commons-io:commons-io'
+    api 'jakarta.validation:jakarta.validation-api'
+    api "com.google.guava:guava:${guava_version}"
+    api "com.google.code.findbugs:jsr305:${jsr305_version}"
+    api 'io.quarkus:quarkus-opentelemetry'
+    api 'io.opentelemetry:opentelemetry-extension-trace-propagators'
+    api 'io.opentelemetry.instrumentation:opentelemetry-jdbc'
+    api 'io.quarkus:quarkus-micrometer-registry-prometheus'
+    implementation 'com.fasterxml.jackson.module:jackson-module-jsonSchema:2.14.2'
+}

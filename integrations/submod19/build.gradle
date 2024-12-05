@@ -1,0 +1,14 @@
+dependencies {
+    api project(':root4')
+
+    api 'io.quarkus:quarkus-rest-client-jackson'
+    api("io.quarkiverse.openapi.generator:quarkus-openapi-generator:${quarkus_openapi_generator_version}")
+    api "org.bouncycastle:bcprov-lts8on:${bouncycastle_version}"
+}
+
+idea {
+    module {
+        sourceDirs += layout.buildDirectory.file("classes/java/quarkus-generated-sources/open-api-json").get().asFile
+        generatedSourceDirs += layout.buildDirectory.file("classes/java/quarkus-generated-sources/open-api-json").get().asFile
+    }
+}

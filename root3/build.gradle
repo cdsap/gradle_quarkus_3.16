@@ -1,0 +1,13 @@
+dependencies {
+    api project(':root4')
+
+    api "io.hypersistence:hypersistence-utils-hibernate-63:${hypersistence_utils_hibernate_63_version}"
+    api "io.quarkus:quarkus-hibernate-orm-panache"
+    api "io.quarkus:quarkus-jdbc-postgresql"
+    api "io.quarkus:quarkus-liquibase"
+    api "org.apache.pulsar:pulsar-client:${pulsar_client_version}"
+    api "io.quarkus:quarkus-cache"
+    api "io.quarkus:quarkus-hibernate-orm-panache"
+    api "nl.garvelink.oss:iban:${garvelink_iban_version}"
+    api "org.web3j:core:${web3j_core_version}"
+}

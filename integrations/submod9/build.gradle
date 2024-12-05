@@ -1,0 +1,17 @@
+dependencies {
+    api project(':root4')
+
+    api 'io.quarkus:quarkus-rest-client-jackson'
+    api "io.quarkus:quarkus-cache"
+//    api("io.quarkiverse.openapi.generator:quarkus-openapi-generator:${quarkus_openapi_generator_version}")
+}
+
+sourceSets.main.java.srcDirs += ['src/main/openapigenerated']
+sourceSets.main.java.srcDirs += ['src/main/jsonschemagenerated']
+
+idea {
+    module {
+        sourceDirs += layout.buildDirectory.file("classes/java/quarkus-generated-sources/open-api-yaml").get().asFile
+        generatedSourceDirs += layout.buildDirectory.file("classes/java/quarkus-generated-sources/open-api-yaml").get().asFile
+    }
+}

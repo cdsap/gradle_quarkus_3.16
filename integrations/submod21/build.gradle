@@ -1,0 +1,7 @@
+dependencies {
+    api project(':root4')
+    api project(':integrations:submod20')
+
+    api "io.quarkus:quarkus-rest-client-jackson"
+    api "org.apache.httpcomponents:httpmime"
+}
