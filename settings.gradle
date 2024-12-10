@@ -5,18 +5,16 @@ pluginManagement {
     }
     plugins {
         id "${quarkusPluginId}" version "${quarkusPluginVersion}"
-        id "com.gradle.develocity" version "${gradleDevelocityPluginVersion}"
     }
+}
+plugins {
+    id("com.gradle.develocity") version "3.18.1"
+}
+develocity {
+    server = "https://ge.solutions-team.gradle.com/"
+    allowUntrustedServer = true
 }
 
-if (hasProperty('develocity')) {
-    develocity {
-        buildScan {
-            termsOfUseUrl = "https://gradle.com/terms-of-service"
-            termsOfUseAgree = "yes"
-        }
-    }
-}
 
 include 'root1'
 include 'root2'
